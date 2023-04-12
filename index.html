@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENCRIPTADOR DE TEXTO - CHALLENGE 1 ALURA ONE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <container class="mainGrid">
+      <div class="divHeader">
+        <container class="sectionContainers">
+          <h1 class="titulo">ENCRIPTADOR DE TEXTO</h1>
+        </container>
+      </div>
+
+      <div class="divInput">
+        <container class="sectionContainers">
+          <h2 class="subtitulo">Mensaje Secreto</h2>
+          <input
+            type="text"
+            placeholder="Escriba acá su mensaje secreto."
+            class="txtBox textoIngresado"
+          /><br />
+          <button class="btn btnEncriptar">Encriptar</button></container
+        >
+      </div>
+      <div class="divOutput">
+        <container class="sectionContainers">
+          <h2 class="subtitulo">Mensaje Encriptado</h2>
+          <input type="text" class="txtBox textoEncriptado" />
+          <br />
+          <container class="botonesBox">
+            <button class="btn btnCopiar">Copiar</button> 
+            <button class="btn btnDesencriptar">Desencriptar</button></container
+          ></container
+        >
+      </div>
+    </container>
+  </body>
+  <script src="script.js"></script>
+</html>
