@@ -41,21 +41,37 @@ function encriptar() {
   textoIngresado.value = ""; //6. pone en blanco la cajita de texto
 }
 
-/*aca tengo que agregar que el output vaya a la caja de input de texto*/
+/* copia el texto en el campo de mensaje encriptado */
+function copiarTexto() {
+  let cb = navigator.clipboard;
+  let mensajeEncriptadoParaCopia =
+    document.getElementById("textoEncriptado").value;
+  document
+    .writeText(mensajeEncriptadoParaCopia)
+    .then(() => {
+      alert("successfully copied");
+    })
+    .catch(() => {
+      alert("something went wrong");
+    });
+  // mensajeEncriptadoParaCopia.select();
+  // mensajeEncriptadoParaCopia.setSelectionRange(0, 99999);
+  // navigator.clipboard
+  //   .writeText(mensajeEncriptadoParaCopia)
+  //   .then(() => {
+  //     alert("successfully copied");
+  //   })
+  //   .catch(() => {
+  //     alert("something went wrong");
+  //   });
+  // alert("Copied the text: " + mensajeEncriptadoParaCopia);
+}
+
 /*esta funcion desencripta el texto ingresado*/
 function desencriptar() {
   let mensajeEncriptado = document.getElementById("textoEncriptado").value;
   alert(mensajeEncriptado);
   textoEncriptado.value = ""; /*pone en blanco la cajita de texto*/
-}
-
-/* copia el texto en el campo de mensaje encriptado */
-function copiarTexto() {
-  let textoCopiado = document.getElementById("textoEncriptado");
-  textoCopiado.select();
-  textoCopiado.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(textoCopiado.value);
-  alert("Copied the text: " + textoCopiado.value);
 }
 
 /* escucha el click del boton encriptar */

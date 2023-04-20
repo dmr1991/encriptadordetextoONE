@@ -32,6 +32,33 @@ body {
   text-align: center;
   border-radius: 40px;
 }
+
+.sectionContainers {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divOutIn {
+  border: #e8175d solid 0.5rem;
+  background-color: #ff2e74;
+  padding: 2rem;
+  margin: 1.5rem 0.5rem;
+  box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 5px 5px 15px rgba(70, 70, 70, 0.12);
+}
+.divOutput {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 6;
+  text-align: center;
+  justify-content: center;
+  border-radius: 40px;
+}
+
 .txtBox {
   width: 500px;
   height: 12rem;
@@ -40,7 +67,6 @@ body {
 }
 
 .btn {
-
   /* background styles */
   position: relative;
   margin-left: 1rem;
@@ -78,32 +104,6 @@ body {
   );
 }
 
-.sectionContainers {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.divOutIn {
-  border: #e8175d solid 0.5rem;
-  background-color: #ff2e74;
-  padding: 2rem;
-  margin: 1.5rem 0.5rem;
-  box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5),
-    inset 5px 5px 15px rgba(70, 70, 70, 0.12);
-}
-.divOutput {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 6;
-  text-align: center;
-  justify-content: center;
-  border-radius: 40px;
-}
-
 .titulo {
   text-align: center;
   font-size: 3rem;
@@ -112,4 +112,60 @@ body {
 .subtitulo {
   text-align: center;
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .txtBox {
+    width: 150px;
+    height: 4rem;
+    margin: 8px;
+  }
+
+  .mainGrid {
+    display: grid;
+    height: 98vh;
+    margin: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.3em;
+  }
+
+  .btn {
+    /* background styles */
+    position: relative;
+    margin-top: 10px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    border-radius: 15px;
+    padding: 10px 15px;
+    background-color: #e8175d; /*for compatibility with older browsers*/
+    background-image: linear-gradient(#e8175d, #e82264);
+
+    /* text styles */
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    font-family: sans-[serif];
+    font-weight: 100;
+  }
+  .titulo {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .subtitulo {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  #btnCopiar {
+    margin-bottom: 3rem;
+  }
+  .divOutIn {
+    border: #e8175d solid 0.5rem;
+    background-color: #ff2e74;
+    padding: 2rem;
+    margin: 2rem 0.2rem;
+    box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+      inset 5px 5px 15px rgba(70, 70, 70, 0.12);
+  }
 }
