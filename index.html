@@ -21,26 +21,27 @@
         </container>
       </div>
 
-      <div class="divInput">
+      <div class="divInput divOutIn">
         <container class="sectionContainers">
           <h2 class="subtitulo">Mensaje Secreto</h2>
           <input
             type="text"
             placeholder="Escriba acá su mensaje secreto."
-            class="txtBox textoIngresado"
+            class="txtBox"
+            id="textoIngresado"
           /><br />
-          <button class="btn btnEncriptar">Encriptar</button></container
-        >
+          <container class="botonesBox">
+            <button class="btn" id="btnEncriptar">Encriptar</button>
+            <button class="btn" id="btnDesencriptar">Desencriptar</button>
+          </container>
+        </container>
       </div>
-      <div class="divOutput">
+      <div class="divOutput divOutIn">
         <container class="sectionContainers">
           <h2 class="subtitulo">Mensaje Encriptado</h2>
-          <input type="text" class="txtBox textoEncriptado" />
+          <input type="text" class="txtBox" id="textoEncriptado" />
           <br />
-          <container class="botonesBox">
-            <button class="btn btnCopiar">Copiar</button> 
-            <button class="btn btnDesencriptar">Desencriptar</button></container
-          ></container
+          <button class="btn" id="btnCopiar">Copiar</button></container
         >
       </div>
     </container>
