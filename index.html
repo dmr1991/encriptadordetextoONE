@@ -16,32 +16,63 @@
   <body>
     <container class="mainGrid">
       <div class="divHeader">
-        <container class="sectionContainers">
-          <h1 class="titulo">ENCRIPTADOR DE TEXTO</h1>
+        <container class="flexHeader">
+          <div class="divLogo">
+            <a href="https://app.aluracursos.com/"
+              ><img
+                src="images/logo.avif"
+                alt="Logo de Alura ONE Oracle Next Education"
+                class="logo"
+            /></a>
+          </div>
+          <div class="divLogoGH">
+            <a href="https://github.com/dmr1991"
+              ><img
+                src="images/GitHub-Logo.png"
+                alt="Logo de GitHub"
+                class="logoGH"
+            /></a>
+          </div>
+
+          <div class="divTitulo">
+            <h1 class="titulo">ENCRIPTADOR DE TEXTO</h1>
+          </div>
         </container>
       </div>
 
       <div class="divInput divOutIn">
         <container class="sectionContainers">
           <h2 class="subtitulo">Mensaje Secreto</h2>
-          <input
-            type="text"
-            placeholder="Escriba acá su mensaje secreto."
-            class="txtBox"
-            id="textoIngresado"
-          /><br />
+          <div contenteditable="true">
+            <textarea
+              type="text"
+              placeholder="Escriba acá su mensaje secreto."
+              class="txtBox"
+              id="textoIngresado"
+            ></textarea>
+          </div>
+          <br />
           <container class="botonesBox">
             <button class="btn" id="btnEncriptar">Encriptar</button>
-            <button class="btn" id="btnDesencriptar">Desencriptar</button>
+            <button class="btn" id="btnNuevaPalabra">Borrar</button>
           </container>
         </container>
       </div>
       <div class="divOutput divOutIn">
         <container class="sectionContainers">
           <h2 class="subtitulo">Mensaje Encriptado</h2>
-          <input type="text" class="txtBox" id="textoEncriptado" value="" />
-          <br />
-          <button class="btn" id="btnCopiar">Copiar</button></container
+          <textarea
+            type="text"
+            class="txtBox"
+            placeholder="Acá verá el mensaje encriptado."
+            id="textoEncriptado"
+            value=""
+          ></textarea>
+
+          <br /><container class="botonesBox">
+            <button class="btn" id="btnCopiar">Copiar</button
+            ><button class="btn" id="btnDesencriptar">Desencriptar</button>
+          </container></container
         >
       </div>
     </container>

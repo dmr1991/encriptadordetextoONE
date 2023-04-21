@@ -2,20 +2,17 @@ let botonEncriptar = document.getElementById("btnEncriptar");
 let botonDesencriptar = document.getElementById("btnDesencriptar");
 let botonCopiar = document.getElementById("btnCopiar");
 let outputTextBox = document.getElementById("textoEncriptado");
+let inputTextBox = document.getElementById("textoIngresado");
+let botonNuevaPalabra = document.getElementById("btnNuevaPalabra");
 /* para probar si los botones los estoy agarrando*/
 function clickTest() {
   alert("clicked");
 }
-
-/*aca tengo que agregar que el output vaya a la caja de output de texto*/
 /*esta funcion encripta el texto ingresado*/
-// function encriptar() {
-//   let mensajeSecretoIngresado = document.getElementById("textoIngresado").value;
-//   alert(mensajeSecretoIngresado);
-//   textoIngresado.value = ""; /*pone en blanco la cajita de texto*/
-// }
 let arrayEncrypted = []; //creo un array vacio que va a ser el mensaje encriptado
-
+function resetArrayEncrypted() {
+  arrayEncrypted = [];
+}
 function encriptar() {
   let mensajeSecretoIngresado = document.getElementById("textoIngresado").value; //1. obtiene el texto ingresado y lo guarda
   let arrayMensajeSecretoIngresado = Array.from(mensajeSecretoIngresado); //2. creo un array de characters del string ingresado
@@ -36,43 +33,70 @@ function encriptar() {
       arrayEncrypted.push(arrayMensajeSecretoIngresado[i]); //agrega el valor en i, sin cambiarlo al array nuevo
     }
   }
-  mensajeEncrypted = arrayEncrypted.join(""); // 4. convierte el array en un string sin espacios ni commas
+  let mensajeEncrypted = arrayEncrypted.join(""); // 4. convierte el array en un string sin espacios ni commas
   outputTextBox.value = mensajeEncrypted; //5. cambia el "value" property del input box del output, para mostrar el texto
-  textoIngresado.value = ""; //6. pone en blanco la cajita de texto
+  inputTextBox.value = ""; //6. pone en blanco la cajita de texto
+  resetArrayEncrypted();
 }
+/*esta funcion desencripta el texto encriptado*/
+let arrayUnencrypted = [];
+function resetArrayUnencrypted() {
+  arrayUnencrypted = [];
+}
+function desencriptar() {
+  let mensajeSecretoEncriptado =
+    document.getElementById("textoEncriptado").value;
+  let reemplazoKey = {
+    //creo que creo objeto con los que quiero reemplazar y el valor nuevo?
+    ai: "a",
+    enter: "e",
+    imes: "i",
+    ober: "o",
+    ufat: "u",
+  };
+  let mensajeDesencriptado = mensajeSecretoEncriptado.replace(
+    /ai|enter|imes|ober|ufat/gi,
+    function (matched) {
+      return reemplazoKey[matched];
+    }
+  );
+  console.log(mensajeDesencriptado);
+  inputTextBox.value = mensajeDesencriptado;
+  outputTextBox.value = "";
+  resetArrayUnencrypted();
+}
+
+function clearBtn() {
+  inputTextBox.value = "";
+}
+
+// textoIngresado.value = ""; /*pone en blanco la cajita de texto*//
+//}
 
 /* copia el texto en el campo de mensaje encriptado */
-function copiarTexto() {
-  let cb = navigator.clipboard;
-  let mensajeEncriptadoParaCopia =
-    document.getElementById("textoEncriptado").value;
-  document
-    .writeText(mensajeEncriptadoParaCopia)
-    .then(() => {
-      alert("successfully copied");
-    })
-    .catch(() => {
-      alert("something went wrong");
-    });
-  // mensajeEncriptadoParaCopia.select();
-  // mensajeEncriptadoParaCopia.setSelectionRange(0, 99999);
-  // navigator.clipboard
-  //   .writeText(mensajeEncriptadoParaCopia)
-  //   .then(() => {
-  //     alert("successfully copied");
-  //   })
-  //   .catch(() => {
-  //     alert("something went wrong");
-  //   });
-  // alert("Copied the text: " + mensajeEncriptadoParaCopia);
-}
-
-/*esta funcion desencripta el texto ingresado*/
-function desencriptar() {
-  let mensajeEncriptado = document.getElementById("textoEncriptado").value;
-  alert(mensajeEncriptado);
-  textoEncriptado.value = ""; /*pone en blanco la cajita de texto*/
-}
+// function copiarTexto() {
+//   let cb = navigator.clipboard;
+//   let mensajeEncriptadoParaCopia =
+//     document.getElementById("textoEncriptado").value;
+//   document
+//     .writeText(mensajeEncriptadoParaCopia)
+//     .then(() => {
+//       alert("successfully copied");
+//     })
+//     .catch(() => {
+//       alert("something went wrong");
+//     });
+// mensajeEncriptadoParaCopia.select();
+// mensajeEncriptadoParaCopia.setSelectionRange(0, 99999);
+// navigator.clipboard
+//   .writeText(mensajeEncriptadoParaCopia)
+//   .then(() => {
+//     alert("successfully copied");
+//   })
+//   .catch(() => {
+//     alert("something went wrong");
+//   });
+// alert("Copied the text: " + mensajeEncriptadoParaCopia);
 
 /* escucha el click del boton encriptar */
 botonEncriptar.addEventListener("click", encriptar);
@@ -81,4 +105,5 @@ botonEncriptar.addEventListener("click", encriptar);
 botonDesencriptar.addEventListener("click", desencriptar);
 
 /* escucha el click del boton copiar */
-botonCopiar.addEventListener("click", copiarTexto);
+botonCopiar.addEventListener("click", clickTest);
+botonNuevaPalabra.addEventListener("click", clearBtn);

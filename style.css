@@ -19,6 +19,46 @@ body {
   grid-column: 1/3;
   background-color: #ffffff00;
 }
+.flexHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 7fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  max-width: 50%;
+}
+.logo:hover {
+  scale: 109%;
+  transition: 0.1s;
+}
+.logoGH {
+  max-width: 50%;
+}
+.logoGH:hover {
+  scale: 109%;
+  transition: 0.1s;
+}
+.divLogo {
+  grid-row: 1/2;
+  align-content: center;
+  justify-content: center;
+}
+.divLogoGH {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  align-content: center;
+  justify-content: center;
+}
+.divTitulo {
+  grid-row: 1/2;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 3rem;
+}
 .divInput {
   grid-column: 1/2;
   justify-content: center;
@@ -94,11 +134,6 @@ body {
   );
 }
 
-.titulo {
-  text-align: center;
-  font-size: 3rem;
-}
-
 .subtitulo {
   text-align: center;
   font-size: 2rem;
@@ -144,7 +179,7 @@ body {
   }
 
   .txtBox {
-    min-width: 100px;
+    min-width: 190px;
     height: 4rem;
     margin: 8px;
   }
@@ -182,5 +217,34 @@ body {
     margin: 2rem 0.2rem;
     box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5),
       inset 5px 5px 15px rgba(70, 70, 70, 0.12);
+  }
+  .logo {
+    max-width: 130%;
+  }
+
+  .logoGH {
+    display: none;
+  }
+  .flexHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+  .divLogo {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    align-content: center;
+    justify-content: center;
+  }
+  .divLogoGH {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    align-content: center;
+    justify-content: center;
+  }
+  .divTitulo {
+    grid-row: 1/2;
   }
 }
