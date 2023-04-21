@@ -104,20 +104,11 @@ body {
   font-size: 2rem;
 }
 
-/*TABLET*/
-
-@media only screen and (max-width: 800px) {
-  .txtBox {
-    width: 300px;
-    height: 12rem;
-    background-color: #ffffff;
-    margin: 10px;
-  }
-}
 /*MOBILE PHONES*/
 @media only screen and (max-width: 500px) {
   .txtBox {
     min-width: 100px;
+    max-width: 160px;
     height: 4rem;
     margin: 8px;
   }
@@ -133,20 +124,30 @@ body {
   .divHeader {
     grid-column: 1/-1;
     background-color: #ffffff00;
+    max-width: 100%;
   }
   .divInput {
     grid-column: 1/-1;
     justify-content: center;
     text-align: center;
     border-radius: 40px;
+    max-width: 75%;
+    min-height: 70%;
   }
   .divOutput {
     grid-column: 1/-1;
     text-align: center;
     justify-content: center;
     border-radius: 40px;
+    max-width: 75%;
+    min-height: 80%;
   }
 
+  .txtBox {
+    min-width: 100px;
+    height: 4rem;
+    margin: 8px;
+  }
   .btn {
     /* background styles */
     position: relative;
