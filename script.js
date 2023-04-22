@@ -74,29 +74,17 @@ function clearBtn() {
 //}
 
 /* copia el texto en el campo de mensaje encriptado */
-// function copiarTexto() {
-//   let cb = navigator.clipboard;
-//   let mensajeEncriptadoParaCopia =
-//     document.getElementById("textoEncriptado").value;
-//   document
-//     .writeText(mensajeEncriptadoParaCopia)
-//     .then(() => {
-//       alert("successfully copied");
-//     })
-//     .catch(() => {
-//       alert("something went wrong");
-//     });
-// mensajeEncriptadoParaCopia.select();
-// mensajeEncriptadoParaCopia.setSelectionRange(0, 99999);
-// navigator.clipboard
-//   .writeText(mensajeEncriptadoParaCopia)
-//   .then(() => {
-//     alert("successfully copied");
-//   })
-//   .catch(() => {
-//     alert("something went wrong");
-//   });
-// alert("Copied the text: " + mensajeEncriptadoParaCopia);
+function copiarTexto() {
+  let mensajeParaCopia = outputTextBox.value;
+  navigator.clipboard
+    .writeText(mensajeParaCopia)
+    .then(() => {
+      alert("successfully copied");
+    })
+    .catch(() => {
+      alert("something went wrong");
+    });
+}
 
 /* escucha el click del boton encriptar */
 botonEncriptar.addEventListener("click", encriptar);
@@ -105,5 +93,5 @@ botonEncriptar.addEventListener("click", encriptar);
 botonDesencriptar.addEventListener("click", desencriptar);
 
 /* escucha el click del boton copiar */
-botonCopiar.addEventListener("click", clickTest);
+botonCopiar.addEventListener("click", copiarTexto);
 botonNuevaPalabra.addEventListener("click", clearBtn);
