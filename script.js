@@ -4,15 +4,13 @@ let botonCopiar = document.getElementById("btnCopiar");
 let outputTextBox = document.getElementById("textoEncriptado");
 let inputTextBox = document.getElementById("textoIngresado");
 let botonNuevaPalabra = document.getElementById("btnNuevaPalabra");
-/* para probar si los botones los estoy agarrando*/
-function clickTest() {
-  alert("clicked");
-}
-/*esta funcion encripta el texto ingresado*/
+
 let arrayEncrypted = []; //creo un array vacio que va a ser el mensaje encriptado
+/*esta funcion reinicia el valor del array encriptado*/
 function resetArrayEncrypted() {
   arrayEncrypted = [];
 }
+/*esta funcion encripta el texto ingresado*/
 function encriptar() {
   let mensajeSecretoIngresado = document.getElementById("textoIngresado").value; //1. obtiene el texto ingresado y lo guarda
   let arrayMensajeSecretoIngresado = Array.from(mensajeSecretoIngresado); //2. creo un array de characters del string ingresado
@@ -38,11 +36,12 @@ function encriptar() {
   inputTextBox.value = ""; //6. pone en blanco la cajita de texto
   resetArrayEncrypted();
 }
-/*esta funcion desencripta el texto encriptado*/
 let arrayUnencrypted = [];
+/*esta funcion reinicia el valor del array desencriptado*/
 function resetArrayUnencrypted() {
   arrayUnencrypted = [];
 }
+/*esta funcion desencripta el texto encriptado*/
 function desencriptar() {
   let mensajeSecretoEncriptado =
     document.getElementById("textoEncriptado").value;
@@ -65,14 +64,9 @@ function desencriptar() {
   outputTextBox.value = "";
   resetArrayUnencrypted();
 }
-
 function clearBtn() {
   inputTextBox.value = "";
 }
-
-// textoIngresado.value = ""; /*pone en blanco la cajita de texto*//
-//}
-
 /* copia el texto en el campo de mensaje encriptado */
 function copiarTexto() {
   let mensajeParaCopia = outputTextBox.value;
@@ -85,13 +79,11 @@ function copiarTexto() {
       alert("something went wrong");
     });
 }
-
 /* escucha el click del boton encriptar */
 botonEncriptar.addEventListener("click", encriptar);
-
 /* escucha el click del boton desencriptar */
 botonDesencriptar.addEventListener("click", desencriptar);
-
 /* escucha el click del boton copiar */
 botonCopiar.addEventListener("click", copiarTexto);
+/* escucha el click del boton borrar */
 botonNuevaPalabra.addEventListener("click", clearBtn);
